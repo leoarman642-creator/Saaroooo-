@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 20th Birthday Sarah! 🎉🎂</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Floating Balloons & Hearts */
+    .bg-element {
+      position: absolute;
+      animation: float 6s infinite linear;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    /* Main Container */
+    .container {
+      width: 90%;
+      max-width: 420px;
+      min-height: 540px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 25px;
+      padding: 25px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Page Styles */
+    .page {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon-box {
+      font-size: 55px;
+      margin-bottom: 10px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 24px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    h2 {
+      color: #6f42c1;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .message-box {
+      text-align: left;
+      background: #fff5f8;
+      padding: 15px;
+      border-radius: 15px;
+      border-left: 4px solid #d63384;
+    }
+
+    .message-box p {
+      color: #333;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .message-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Navigation */
+    .nav-container {
+      margin-top: 15px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background-color: #d63384;
+      width: 22px;
+      border-radius: 10px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1;
+    }
+
+    .next-btn {
+      background: linear-gradient(45deg, #d63384, #fd7e14);
+      color: white;
+      box-shadow: 0 4px 12px rgba(214, 51, 132, 0.3);
+    }
+
+    .prev-btn {
+      background-color: #e9ecef;
+      color: #495057;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="bg-container"></div>
+
+  <div class="container">
+    <div>
+      <!-- PAGE 1 -->
+      <div class="page active" id="page1">
+        <div class="icon-box">🎉✨</div>
+        <h1>Happy Birthday Sarah!</h1>
+        <h2>Welcome To Page 1 ❤️</h2>
+        <div class="message-box">
+          <p>1. Aaj ka din meri life ka sab se special din hai.</p>
+          <p>2. Kyun ke aaj ke din aap is duniya mein aayi thi.</p>
+          <p>3. Aap ki presence meri life ko bohot haseen banati hai.</p>
+          <p>4. Aap ki ek choti si smile se mera poora din ban jata hai.</p>
+          <p>5. Aaj aap ke liye ek chota sa surprise ready kiya hai.</p>
+          <p>6. Agla page dekhne ke liye niche button par click karein! ✨</p>
+        </div>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="page" id="page2">
+        <div class="icon-box">📅🎂</div>
+        <h1>16th November Special</h1>
+        <h2>The Special Date ❤️</h2>
+        <div class="message-box">
+          <p>1. 16 November hamesha mere dil ke bohot kareeb rahega.</p>
+          <p>2. Aaj ke din ek bohot hi pyaari rooh duniya mein aayi.</p>
+          <p>3. Jis ne meri zindagi mein aakar sab kuch badal diya.</p>
+          <p>4. Aap ki waja se maine khush rehna seekha hai.</p>
+          <p>5. Aap jaisi pyaari personality duniya mein kahin nahi hai.</p>
+          <p>6. Thank you so much meri life ka hissa banne ke liye! 💖</p>
+        </div>
+      </div>
+
+      <!-- PAGE 3 -->
+      <div class="page" id="page3">
+        <div class="icon-box">👑🌟</div>
+        <h1>Welcome To 20s!</h1>
+        <h2>Turning 20 Years Old ❤️</h2>
+        <div class="message-box">
+          <p>1. Finally aap ne apni life ke 20 saal poore kar liye hain.</p>
+          <p>2. Ab aap Offically Teenage se nikal kar 20s mein aa gayi hain.</p>
+          <p>3. Ye 20 saal ka safar bohot hi zardardast raha hai.</p>
+          <p>4. Allah kare aap ka ye naya saal khushiyon se bhara ho.</p>
+          <p>5. Life ke har mod par aap ko sirf kamyabi mile.</p>
+          <p>6. Always stay happy and keep glowing like a star! ⭐</p>
+        </div>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="page" id="page4">
+        <div class="icon-box">💖🌸</div>
+        <h1>You Are Amazing!</h1>
+        <h2>Special Message For Sarah ❤️</h2>
+        <div class="message-box">
+          <p>1. Sarah aap bilkul ek bache ki tarah pyaari aur masoom ho.</p>
+          <p>2. Aap ki batein aur aap ka style sab se alag hai.</p>
+          <p>3. Jab bhi aap udaas hoti ho toh mera dil udaas ho jata hai.</p>
+          <p>4. Is liye waada karo ke aap hamesha aise hi muskuraogi.</p>
+          <p>5. Aap ki khushi mere liye sab se zyaada matter karti hai.</p>
+          <p>6. Aap mere liye kitni special ho ye baaton mein batana mushkil hai! 🌹</p>
+        </div>
+      </div>
+
+      <!-- PAGE 5 -->
+      <div class="page" id="page5">
+        <div class="icon-box">🎁🎈</div>
+        <h1>My Birthday Wishes</h1>
+        <h2>Heartfelt Prayers ❤️</h2>
+        <div class="message-box">
+          <p>1. Meri dua hai ke Allah aap ko hamesha sehatmand rakhe.</p>
+          <p>2. Aap ke har khwab aur har wish poori ho jaye.</p>
+          <p>3. Aap ko zindagi mein kabhi koi gham ya dukh na mile.</p>
+          <p>4. Aap ki smile hamesha aise hi bright chamakti rahe.</p>
+          <p>5. Har saal aap ki birthday pehly se zyaada haseen ho.</p>
+          <p>6. May Allah bless you with endless happiness in life! 🤲✨</p>
+        </div>
+      </div>
+
+      <!-- PAGE 6 -->
+      <div class="page" id="page6">
+        <div class="icon-box">🎂❤️</div>
+        <h1>I Love You So Much!</h1>
+        <h2>Happy 20th Birthday Sarah ❤️</h2>
+        <div class="message-box">
+          <p>1. Aakhir mein bas itna kehna chahta hoon...</p>
+          <p>2. Aap meri life ka sab se best aur precious part ho.</p>
+          <p>3. Main aap se bohot bohot zyaada pyaar karta hoon.</p>
+          <p>4. Hamesha mere sath rehna aur aise hi muskurate rehna.</p>
+          <p>5. Once again a Very Happy 20th Birthday my Princess!</p>
+          <p>6. Have a magical day and enjoy your special day! 🎉🎂💖</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-container">
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="btn-group">
+        <button class="prev-btn hidden" id="prevBtn" onclick="changePage(-1)">Wapas</button>
+        <button class="next-btn" id="nextBtn" onclick="changePage(1)">Aage Dekhein ➔</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 6;
+
+    function changePage(direction) {
+      document.getElementById(`page${currentPage}`).classList.remove('active');
+      currentPage += direction;
+
+      if (currentPage < 1) currentPage = 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      document.getElementById(`page${currentPage}`).classList.add('active');
+      updateNav();
+    }
+
+    function updateNav() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index === currentPage - 1) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      const prevBtn = document.getElementById('prevBtn');
+      if (currentPage === 1) {
+        prevBtn.classList.add('hidden');
+      } else {
+        prevBtn.classList.remove('hidden');
+      }
+
+      const nextBtn = document.getElementById('nextBtn');
+      if (currentPage === totalPages) {
+        nextBtn.innerText = "Enjoy Your Day! 🎉";
+        nextBtn.style.background = "linear-gradient(45deg, #28a745, #20c997)";
+      } else {
+        nextBtn.innerText = "Aage Dekhein ➔";
+        nextBtn.style.background = "linear-gradient(45deg, #d63384, #fd7e14)";
+      }
+    }
+
+    function createBgElements() {
+      const container = document.getElementById('bg-container');
+      const items = ['🎈', '🎂', '💖', '✨', '🌸', '🎁', '🎉'];
+
+      setInterval(() => {
+        const el = document.createElement('div');
+        el.classList.add('bg-element');
+        el.innerText = items[Math.floor(Math.random() * items.length)];
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.fontSize = (Math.random() * 20 + 15) + 'px';
+        el.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        container.appendChild(el);
+
+        setTimeout(() => {
+          el.remove();
+        }, 6000);
+      }, 350);
+    }
+
+    createBgElements();
+  </script>
+</body>
+  </html>
